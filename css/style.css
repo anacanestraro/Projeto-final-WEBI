@@ -59,6 +59,11 @@
     margin: 0 1em;
   }
 
+  /*MAIN*/
+  .wrapper{
+    min-height: 100vh;
+  }
+
   /*TOPO FOOTER*/
   #footer{
     padding: 3em 2em;
