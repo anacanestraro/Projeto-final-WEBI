@@ -1,10 +1,22 @@
-const getPost = (image_id) => {
-    fetch(`https://api.thecatapi.com/v1/images/:${image_id}`) //endpoint
-      .then((response) => response.json()) //callback - promise
-      .then((json) => {
-        console.log(json);
-      }) // retorno
-      .catch((error) => console.log(error)); // capturar erro
+// getAll
+const getAllPosts = async (u2) => {
+    try {
+      const res = await fetch(`https://www.vagalume.com.br/${u2}`);
+      const data = await res.json();
+  
+      if (!res.ok) {
+        console.log(data.description);
+        return;
+      }
+  
+      data.forEach((element) => {
+        console.log(
+          `ID do artista: ${element.id} \n Nome do artista: ${element.desc}, URL: ${element.url}`
+        );
+      });
+    } catch (error) {
+      console.log(`Erro - ${error}`);
+    }
   };
   
-  getPost(1);
+  getAllPosts();
