@@ -8,8 +8,10 @@ const getAllPosts = async (u2) => {
         console.log(data.description);
         return;
       }
-  
-      data.forEach((element) => {
+      
+      const artistas = data.results;
+
+      artistas.forEach((element) => {
         console.log(
           `ID do artista: ${element.id} \n Nome do artista: ${element.desc}, URL: ${element.url}`
         );
