@@ -74,7 +74,5 @@ const createPost = async (novaBuscaJSON) => {
 
 document.getElementById('buscarButton').addEventListener('click', function(){
     const album = document.getElementById('albumInput').value;
-    const artist = document.getElementById('artistInput').value;
-
-    getAllPosts(artist, album);
+    getAllPosts(album);
 });
