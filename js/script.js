@@ -35,6 +35,42 @@ const getAllPosts = async (artist, album) => {
     }
 };
 
+// Post
+
+const createPost = async (novaBuscaJSON) => {
+    try {
+      const res = await fetch(`https://jhttp://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=05bd3517a04dadff15290acb4341232c&artist=${artist}&album=${album}&format=jsonsonplaceholder.typicode.com/posts`, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+        body: novaBuscaJSON,
+      });
+  
+      const data = await res.json();
+      console.log("inserir");
+      console.log(data);
+  
+      if (!res.ok) {
+        console.log(data.description);
+        return;
+      }
+    } catch (error) {
+      console.log(`Erro - ${error}`);
+    }
+  };
+  
+  let novaBusca = {
+    userId: 1,
+    title: "Novo Post",
+    body: "quia et suscipitsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totamnostrum rerum est autem sunt rem eveniet architecto",
+  };
+  
+  let novaBuscaJSON = JSON.stringify(novaBusca);
+  
+  createPost(novaBuscaJSON);
+  
+
 // Evento de buscar no botão
 
 document.getElementById('buscarButton').addEventListener('click', function(){
