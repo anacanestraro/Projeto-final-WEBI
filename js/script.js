@@ -1,7 +1,7 @@
 // getAll
 const getAllPosts = async (album) => {
     try {
-        const res = await fetch(`http://ws.audioscrobbler.com/2.0/?method=album.search&album=$(album)&api_key=05bd3517a04dadff15290acb4341232c&format=json`);
+        const res = await fetch(`http://ws.audioscrobbler.com/2.0/?method=album.search&album=${album}&api_key=05bd3517a04dadff15290acb4341232c&format=json`);
         const data = await res.json();
 
         if (!res.ok) {
